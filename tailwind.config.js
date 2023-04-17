@@ -20,6 +20,7 @@ module.exports = {
         blue: {
           base: "#2D68F0",
           light: "#419EBB",
+          lightest: "#DEF4FC",
         },
         yellow: "#EDA249",
         orange: {
@@ -29,10 +30,18 @@ module.exports = {
         purple: "#6F2ED6",
         red: "#D83A34",
         teal: "#1EC2A4",
+        mercury: "#DEF4FC",
+        venus: "#F7CC7F",
+        earth: "#545BFE",
+        mars: "#FF6A45",
+        jupiter: "#ECAD7A",
+        saturn: "#FCCB6B",
+        uranus: "#65F0D5",
+        neptune: "#497EFA",
       },
       fontFamily: {
-        "antonio": ["var(--font-antonio)", ...fontFamily.sans],
-        "spartan": ["var(--font-spartan)", ...fontFamily.sans],
+        antonio: ["var(--font-antonio)", ...fontFamily.sans],
+        spartan: ["var(--font-spartan)", ...fontFamily.sans],
       },
     },
   },

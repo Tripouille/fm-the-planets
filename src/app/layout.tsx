@@ -1,3 +1,4 @@
+import { BurgerMenu } from "@/components/BurgerMenu";
 import { Antonio, League_Spartan } from "next/font/google";
 import "./globals.css";
 
@@ -16,16 +17,21 @@ export const metadata = {
   description: "Frontend Mentor Challenge",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={`${antonio.variable} ${spartan.variable} font-spartan`}>
-        <main className="grid min-h-screen place-items-center">{children}</main>
+      <body
+        className={`${antonio.variable} ${spartan.variable} flex min-h-screen flex-col items-center bg-black font-spartan text-white`}
+      >
+        <header className="relative flex w-full justify-between px-6 py-4">
+          <p className="text-3xl">THE PLANETS</p>
+
+          <BurgerMenu />
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
