@@ -1,3 +1,3 @@
-export default function Home() {
-  return <h1 className="bg-red-500 text-white ">Hello worlds!</h1>;
+export default function HomePage() {
+  return <h1 className="text-5xl">The Planets!</h1>;
 }
