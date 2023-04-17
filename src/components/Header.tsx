@@ -1,44 +1,41 @@
 "use client";
-
+import { BurgerButton } from "@/components/BurgerButton";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 import data from "../app/data.json";
 
-export const BurgerMenu = () => {
+export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <button
-        data-open={isOpen}
-        type="button"
-        className="flex flex-col justify-center gap-1 [&>div]:h-1 [&>div]:w-6 [&>div]:bg-white [&[data-open='true']>div]:bg-gray-base"
-        aria-label="burger menu"
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
+    <header className="relative w-full">
       <nav
+        aria-hidden={!isOpen}
         className={clsx(
-          "absolute left-0 top-full z-20 w-full overflow-hidden border-t-[1px] border-gray-dark"
+          { "-translate-y-full": !isOpen },
+          { "top-full translate-y-0": isOpen },
+          "absolute left-0 w-full transition-transform duration-500"
         )}
       >
-        <NavigationLinks isOpen={isOpen} />
+        <NavigationLinks />
       </nav>
-    </>
+      <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black px-6 py-4">
+        <p className="text-3xl">THE PLANETS</p>
+        <BurgerButton
+          isOpen={isOpen}
+          onClick={() => setIsOpen((prev) => !prev)}
+        />
+      </div>
+    </header>
   );
-};
+}
 
-const NavigationLinks = ({ isOpen }: { isOpen: boolean }) => {
+const NavigationLinks = () => {
   return (
     <ul
       className={clsx(
-        { "-translate-y-full": !isOpen },
-        { "translate-y-0": isOpen },
-        "flex flex-col items-center bg-black px-6 py-6 transition-transform "
+        "flex flex-col items-center bg-black px-6 py-6 transition-transform"
       )}
     >
       {data.map(({ name }) => (

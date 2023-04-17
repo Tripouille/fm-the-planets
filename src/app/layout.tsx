@@ -1,5 +1,5 @@
-import { BurgerMenu } from "@/components/BurgerMenu";
 import { Antonio, League_Spartan } from "next/font/google";
+import { Header } from "../components/Header";
 import "./globals.css";
 
 const antonio = Antonio({
@@ -23,12 +23,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${antonio.variable} ${spartan.variable} flex min-h-screen flex-col items-center bg-black font-spartan text-white`}
       >
-        <header className="relative flex w-full justify-between px-6 py-4">
-          <p className="text-3xl">THE PLANETS</p>
-
-          <BurgerMenu />
-        </header>
-        <main>{children}</main>
+        <Header />
+        <main >{children}</main>
       </body>
     </html>
   );
