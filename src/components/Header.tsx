@@ -1,9 +1,9 @@
 "use client";
 import { BurgerButton } from "@/components/BurgerButton";
+import { planets } from "@/utils/planet";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
-import data from "../app/data.json";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +38,7 @@ const NavigationLinks = ({ onClick }: { onClick: () => void }) => {
         "flex flex-col items-center bg-black px-6 py-6 transition-transform"
       )}
     >
-      {data.map(({ name }) => (
+      {planets.map(({ name }) => (
         <li className="group w-full" key={name}>
           <Link
             onClick={onClick}
