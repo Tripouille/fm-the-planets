@@ -20,7 +20,7 @@ export function Header() {
       >
         <NavigationLinks />
       </nav>
-      <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black px-6 py-4">
+      <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black bg-stars px-6 py-4">
         <p className="text-3xl">THE PLANETS</p>
         <BurgerButton
           isOpen={isOpen}
