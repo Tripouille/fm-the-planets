@@ -1,15 +1,22 @@
 "use client";
 
+import { PropsWithClassName } from "@/utils/types";
+import clsx from "clsx";
+
 export interface BurgerButtonProps {
   isOpen: boolean;
   onClick: () => void;
 }
-export const BurgerButton = ({ isOpen, onClick }: BurgerButtonProps) => {
+export const BurgerButton = ({
+  isOpen,
+  onClick,
+  className,
+}: PropsWithClassName<BurgerButtonProps>) => {
   return (
     <button
       data-open={isOpen}
       type="button"
-      className="[&[data-open='true']>svg]:text-gray-base"
+      className={clsx("[&[data-open='true']>svg]:text-gray-base", className)}
       aria-label="burger menu"
       onClick={onClick}
     >
