@@ -18,7 +18,7 @@ export const BurgerButton = ({ isOpen, onClick }: BurgerButtonProps) => {
         viewBox="0 0 24 17"
         className="h-4 w-6"
       >
-        <g fill="currentColor" fill-rule="evenodd">
+        <g fill="currentColor" fillRule="evenodd">
           <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
         </g>
       </svg>
