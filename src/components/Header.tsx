@@ -63,7 +63,12 @@ const NavigationLinks = ({ onClick }: { onClick: () => void }) => {
               />
               <span className="inline-block uppercase">{name}</span>
             </p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-2 w-2"
+              viewBox="0 0 6 8"
+              aria-hidden
+            >
               <path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
             </svg>
           </Link>
