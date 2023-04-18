@@ -24,7 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         className={`${antonio.variable} ${spartan.variable} flex min-h-screen flex-col items-center bg-black bg-stars font-spartan text-white`}
       >
         <Header />
-        <main className="flex-grow w-full">{children}</main>
+        <main className="w-full flex-grow">{children}</main>
       </body>
     </html>
   );

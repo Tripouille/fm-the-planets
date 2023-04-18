@@ -9,7 +9,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative w-full">
+    <header className="relative z-10 w-full">
       <nav
         aria-hidden={!isOpen}
         className={clsx(
@@ -18,10 +18,10 @@ export function Header() {
           "absolute left-0 w-full transition-transform duration-500"
         )}
       >
-        <NavigationLinks />
+        <NavigationLinks onClick={() => setIsOpen(false)} />
       </nav>
       <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black bg-stars px-6 py-4">
-        <p className="text-3xl">THE PLANETS</p>
+        <p className="font-antonio text-3xl">THE PLANETS</p>
         <BurgerButton
           isOpen={isOpen}
           onClick={() => setIsOpen((prev) => !prev)}
@@ -31,7 +31,7 @@ export function Header() {
   );
 }
 
-const NavigationLinks = () => {
+const NavigationLinks = ({ onClick }: { onClick: () => void }) => {
   return (
     <ul
       className={clsx(
@@ -41,8 +41,9 @@ const NavigationLinks = () => {
       {data.map(({ name }) => (
         <li className="group w-full" key={name}>
           <Link
+            onClick={onClick}
             href={`/${name.toLowerCase()}`}
-            className="flex h-full items-center justify-between border-b-[1px] border-gray-dark py-6 focus-visible:outline-none group-last:border-b-0"
+            className="flex h-full items-center justify-between border-b-[1px] border-gray-dark py-6 group-last:border-b-0"
           >
             <p className={clsx("text-md flex items-start gap-6")}>
               <span
