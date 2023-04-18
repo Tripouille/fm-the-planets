@@ -1,17 +1,23 @@
 "use client";
-import { Planet } from "@/utils/planet";
+import { getPlanet, PlanetName } from "@/utils/planet";
 import * as Tabs from "@radix-ui/react-tabs";
 import clsx from "clsx";
 import Image from "next/image";
 
-export const PlanetTabs = ({ planet }: { planet: Planet }) => {
+export interface PlanetTabsProps {
+  planetName: PlanetName;
+}
+
+export const PlanetTabs = ({ planetName }: PlanetTabsProps) => {
+  const { images } = getPlanet(planetName);
+
   return (
     <Tabs.Root
       className="grid grid-cols-1 place-items-center"
       defaultValue="overview"
     >
       <Tabs.List
-        data-planet={planet}
+        data-planet={planetName}
         className={clsx(
           "flex w-full flex-wrap justify-center border-b-[1px] border-gray-dark font-bold text-gray-base",
           "[&[data-planet=mercury]_button]:border-mercury",
@@ -49,8 +55,8 @@ export const PlanetTabs = ({ planet }: { planet: Planet }) => {
         value="overview"
       >
         <Image
-          alt={planet}
-          src={`/assets/planet-${planet}.svg`}
+          alt={planetName}
+          src={images.planet}
           width={111}
           height={111}
           sizes="111w"
@@ -61,8 +67,8 @@ export const PlanetTabs = ({ planet }: { planet: Planet }) => {
         value="structure"
       >
         <Image
-          alt={`${planet} internal view`}
-          src={`/assets/planet-${planet}-internal.svg`}
+          alt={`${planetName} internal view`}
+          src={images.internal}
           width={111}
           height={111}
           sizes="111w"
@@ -74,15 +80,15 @@ export const PlanetTabs = ({ planet }: { planet: Planet }) => {
       >
         <div className="relative">
           <Image
-            alt={planet}
-            src={`/assets/planet-${planet}.svg`}
+            alt={planetName}
+            src={images.planet}
             width={111}
             height={111}
             sizes="111w"
           />
           <Image
-            alt={`${planet} surface view`}
-            src={`/assets/geology-${planet}.png`}
+            alt={`${planetName} surface view`}
+            src={images.geology}
             width={70}
             height={70}
             sizes="70w"
