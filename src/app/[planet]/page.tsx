@@ -1,5 +1,5 @@
 import { PlanetDetails } from "@/components/PlanetDetails";
-import { PlanetTabs } from "@/components/PlanetTabs";
+import { PlanetViews } from "@/components/PlanetViews";
 import { planetNameSchema } from "@/utils/planet";
 import { notFound } from "next/navigation";
 
@@ -15,8 +15,8 @@ const PlanetPage = ({ params }: PlanetPageProps) => {
 
   return (
     <>
-      <PlanetTabs planetName={parsing.data} />
-      <PlanetDetails planetName={parsing.data} />
+      <PlanetViews planetName={parsing.data} />
+      <PlanetDetails planetName={parsing.data} className="px-6" />
     </>
   );
 };

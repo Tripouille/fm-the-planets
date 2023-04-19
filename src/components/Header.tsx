@@ -26,15 +26,12 @@ export const Header = () => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
         <nav className="hidden w-full sm:block">
-          <ul className="justify-around sm:flex">
+          <ul className="flex-wrap justify-around sm:flex">
             {planets.map(({ name }) => (
-              <li
-                className="group w-full text-center transition-transform hover:scale-125"
-                key={name}
-              >
+              <li className="group text-center" key={name}>
                 <Link
                   href={`/${name.toLowerCase()}`}
-                  className="px-6 py-3 uppercase transition-transform group-hover:scale-125"
+                  className="px-2 py-3 uppercase"
                 >
                   {name}
                 </Link>
@@ -57,7 +54,6 @@ const MobileNavigation = ({
 }>) => {
   return (
     <nav
-      aria-hidden={!isOpen}
       className={clsx(
         { "-translate-y-full": !isOpen },
         { "top-full translate-y-0": isOpen },
