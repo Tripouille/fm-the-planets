@@ -21,7 +21,7 @@ export const Header = ({ planetName }: HeaderProps) => {
         className="sm:hidden"
       />
       <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black bg-stars px-6 py-4 sm:flex-wrap sm:gap-y-10 md:flex-nowrap md:justify-between">
-        <p className="min-w-fit text-center font-antonio text-3xl sm:basis-full md:basis-auto">
+        <p className="grid min-w-fit place-items-center font-antonio text-3xl sm:basis-full md:basis-auto">
           THE PLANETS
         </p>
         <BurgerButton
@@ -30,7 +30,7 @@ export const Header = ({ planetName }: HeaderProps) => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
         <nav className="hidden w-full sm:block md:w-auto">
-          <ul className="h-full flex-wrap items-center justify-around sm:flex md:gap-3">
+          <ul className="h-full flex-wrap items-center justify-around sm:flex md:justify-center md:gap-1">
             {planets.map(({ name }) => (
               <li
                 aria-current={planetName === name ? "page" : undefined}
