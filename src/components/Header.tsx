@@ -1,12 +1,16 @@
 "use client";
 import { BurgerButton } from "@/components/BurgerButton";
-import { planets } from "@/utils/planet";
+import { PlanetName, planets } from "@/utils/planet";
 import { PropsWithClassName } from "@/utils/types";
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
-export const Header = () => {
+export interface HeaderProps {
+  planetName: PlanetName;
+}
+
+export const Header = ({ planetName }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,12 +30,35 @@ export const Header = () => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
         <nav className="hidden w-full sm:block md:w-auto">
-          <ul className="flex-wrap items-center justify-around sm:flex h-full md:gap-3">
+          <ul className="h-full flex-wrap items-center justify-around sm:flex md:gap-3">
             {planets.map(({ name }) => (
-              <li className="group text-center" key={name}>
+              <li
+                aria-current={planetName === name ? "page" : undefined}
+                data-planet={name}
+                className={clsx(
+                  "group border-b-4 border-transparent text-center transition-all duration-300",
+                  "[&[data-planet=mercury]]:hover:border-mercury",
+                  "[&[data-planet=venus]]:hover:border-venus",
+                  "[&[data-planet=earth]]:hover:border-earth",
+                  "[&[data-planet=mars]]:hover:border-mars",
+                  "[&[data-planet=jupiter]]:hover:border-jupiter",
+                  "[&[data-planet=saturn]]:hover:border-saturn",
+                  "[&[data-planet=uranus]]:hover:border-uranus",
+                  "[&[data-planet=neptune]]:hover:border-neptune",
+                  "[&[aria-current=page][data-planet=neptune]]:border-mercury",
+                  "[&[aria-current=page][data-planet=mercury]]:border-mercury",
+                  "[&[aria-current=page][data-planet=venus]]:border-venus",
+                  "[&[aria-current=page][data-planet=earth]]:border-earth",
+                  "[&[aria-current=page][data-planet=mars]]:border-mars",
+                  "[&[aria-current=page][data-planet=jupiter]]:border-jupiter",
+                  "[&[aria-current=page][data-planet=saturn]]:border-saturn",
+                  "[&[aria-current=page][data-planet=uranus]]:border-uranus"
+                )}
+                key={name}
+              >
                 <Link
                   href={`/${name.toLowerCase()}`}
-                  className="px-2 py-3 uppercase"
+                  className="px-2 py-3 uppercase transition-transform"
                 >
                   {name}
                 </Link>

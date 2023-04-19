@@ -1,5 +1,4 @@
 import { Antonio, League_Spartan } from "next/font/google";
-import { Header } from "../components/Header";
 import "./globals.css";
 
 const antonio = Antonio({
@@ -23,8 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${antonio.variable} ${spartan.variable} flex min-h-screen flex-col items-center bg-black bg-stars font-spartan text-white`}
       >
-        <Header />
-        <main className="w-full flex-grow">{children}</main>
+        {children}
       </body>
     </html>
   );
