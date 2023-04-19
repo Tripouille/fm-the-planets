@@ -16,8 +16,8 @@ export const Header = () => {
         isOpen={isOpen}
         className="sm:hidden"
       />
-      <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black bg-stars px-6 py-4 sm:flex-wrap sm:gap-y-10">
-        <p className="text-center font-antonio text-3xl sm:basis-full">
+      <div className="bg-dark relative flex w-full justify-between border-b-[1px] border-gray-dark bg-black bg-stars px-6 py-4 sm:flex-wrap sm:gap-y-10 md:flex-nowrap md:justify-between">
+        <p className="min-w-fit text-center font-antonio text-3xl sm:basis-full md:basis-auto">
           THE PLANETS
         </p>
         <BurgerButton
@@ -25,8 +25,8 @@ export const Header = () => {
           isOpen={isOpen}
           onClick={() => setIsOpen((prev) => !prev)}
         />
-        <nav className="hidden w-full sm:block">
-          <ul className="flex-wrap justify-around sm:flex">
+        <nav className="hidden w-full sm:block md:w-auto">
+          <ul className="flex-wrap items-center justify-around sm:flex h-full md:gap-3">
             {planets.map(({ name }) => (
               <li className="group text-center" key={name}>
                 <Link
