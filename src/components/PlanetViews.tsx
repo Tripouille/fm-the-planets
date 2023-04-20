@@ -46,14 +46,14 @@ const PlanetViewSection = ({
   planetName: PlanetName;
 }) => {
   return (
-    <section className="grid grid-cols-1 place-items-center p-6 sm:col-span-1 sm:grid-cols-2 md:grid-rows-[1fr] md:justify-items-center md:gap-x-12 [&[data-state='inactive']]:translate-x-full">
+    <section className="grid grid-cols-1 place-items-center p-6 sm:grid-cols-2 md:grid-rows-[1fr] md:gap-x-12">
       <div className="grid min-h-[19rem] place-items-center sm:col-span-2 sm:min-h-[42rem] md:col-span-1">
         <PlanetViewSectionImage
           planet={planet}
           planetView={planetView}
         />
       </div>
-      <div className="col-span-2 flex max-w-sm flex-col px-6 text-center sm:col-span-1 sm:min-h-[19rem] sm:text-left md:justify-center md:px-0">
+      <div className="flex max-w-sm flex-col px-6 text-center sm:min-h-[19rem] sm:text-left md:justify-center md:px-0">
         <h1 className="mb-4 font-antonio text-[2.5rem] font-bold capitalize leading-snug sm:text-5xl sm:leading-tight">
           {planet.name}
         </h1>
