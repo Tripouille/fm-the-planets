@@ -16,7 +16,7 @@ const PlanetPage = ({ params }: PlanetPageProps) => {
 
   return (
     <>
-      <Header planetName={parsing.data} />
+      <Header planetName={parsing.data} className="max-w-[110rem]" />
       <main className="w-full max-w-[90rem] flex-grow">
         <PlanetViews planetName={parsing.data} />
         <PlanetDetails planetName={parsing.data} className="px-6" />

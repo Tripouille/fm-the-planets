@@ -10,11 +10,14 @@ export interface HeaderProps {
   planetName: PlanetName;
 }
 
-export const Header = ({ planetName }: HeaderProps) => {
+export const Header = ({
+  className,
+  planetName,
+}: PropsWithClassName<HeaderProps>) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative z-10 w-full">
+    <header className={clsx("relative z-10 w-full", className)}>
       <MobileNavigation
         onClick={() => setIsOpen(false)}
         isOpen={isOpen}
