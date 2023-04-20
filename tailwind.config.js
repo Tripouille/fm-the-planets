@@ -46,6 +46,15 @@ module.exports = {
         antonio: ["var(--font-antonio)", ...fontFamily.sans],
         spartan: ["var(--font-spartan)", ...fontFamily.sans],
       },
+      animation: {
+        "planet-slide-in": "planet-slide-in 0.5s ease-out",
+      },
+      keyframes: {
+        "planet-slide-in": {
+          "0%": { transform: "translate(-100%, -25%) scale(0.5)" },
+          "100%": { transform: "translate(0%, 0%) scale(1)" },
+        },
+      },
     },
   },
   plugins: [],

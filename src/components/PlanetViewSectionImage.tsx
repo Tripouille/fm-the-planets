@@ -19,7 +19,7 @@ export const PlanetViewSectionImage = ({
         alt={planet.name}
         src={planet.images.planet}
         data-planet={planet.name}
-        className={clsx("object-contain", className)}
+        className={clsx("animate-planet-slide-in object-contain", className)}
       />
     );
   }
