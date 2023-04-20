@@ -48,7 +48,7 @@ export const Header = ({
                   "[&[data-planet=saturn]]:hover:border-saturn",
                   "[&[data-planet=uranus]]:hover:border-uranus",
                   "[&[data-planet=neptune]]:hover:border-neptune",
-                  "[&[aria-current=page][data-planet=neptune]]:border-mercury",
+                  "[&[aria-current=page][data-planet=neptune]]:border-neptune",
                   "[&[aria-current=page][data-planet=mercury]]:border-mercury",
                   "[&[aria-current=page][data-planet=venus]]:border-venus",
                   "[&[aria-current=page][data-planet=earth]]:border-earth",
