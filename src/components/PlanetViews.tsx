@@ -46,7 +46,7 @@ const PlanetViewSection = ({
   planetName: PlanetName;
 }) => {
   return (
-    <section className="grid grid-cols-1 place-items-center p-6 sm:grid-cols-2 md:grid-rows-[1fr] md:gap-x-12">
+    <section className="grid grid-cols-1 place-items-center p-4 sm:grid-cols-2 md:grid-rows-[1fr] md:gap-x-12">
       <div className="grid min-h-[19rem] place-items-center sm:col-span-2 sm:min-h-[42rem] md:col-span-1">
         <PlanetViewSectionImage planet={planet} planetView={planetView} />
       </div>
