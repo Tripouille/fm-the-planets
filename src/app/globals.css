@@ -2,9 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* https://stackoverflow.com/questions/71992334/how-to-remove-white-border-on-lazy-loaded-images-in-safari */
-@supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading="lazy"] {
-    clip-path: inset(0.6px);
+img[data-planet="mercury"] {
+  --size-planet-image: 111px;
+}
+
+img[data-planet="venus"] {
+  --size-planet-image: 154px;
+}
+
+img[data-planet="earth"] {
+  --size-planet-image: 173px;
+}
+
+img[data-planet="mars"] {
+  --size-planet-image: 129px;
+}
+
+img[data-planet="jupiter"] {
+  --size-planet-image: 224px;
+}
+
+img[data-planet="saturn"] {
+  --size-planet-image: 256px;
+}
+
+img[data-planet="uranus"] {
+  --size-planet-image: 176px;
+}
+
+img[data-planet="neptune"] {
+  --size-planet-image: 173px;
+}
+
+img[data-planet] {
+  aspect-ratio: 1;
+  width: var(--size-planet-image);
+}
+
+@media screen(sm) {
+  img[data-planet] {
+    width: calc(var(--size-planet-image) * 1.65);
+  }
+}
+
+@media screen(md) {
+  img[data-planet] {
+    width: calc(var(--size-planet-image) * 2.6);
   }
 }

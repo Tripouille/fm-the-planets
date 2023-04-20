@@ -46,32 +46,18 @@ const PlanetViewSection = ({
   planetName: PlanetName;
 }) => {
   return (
-    <section className="grid grid-cols-2 px-6 transition-transform sm:col-span-1 md:grid-rows-[1fr_1fr] [&[data-state='inactive']]:translate-x-full">
-      <div className="md:col-start col-span-2 grid min-h-[19rem] place-items-center sm:min-h-[30.5rem] md:col-span-1 md:row-span-2">
+    <section className="grid grid-cols-1 place-items-center p-6 sm:col-span-1 sm:grid-cols-2 md:grid-rows-[1fr] md:justify-items-center md:gap-x-12 [&[data-state='inactive']]:translate-x-full">
+      <div className="grid min-h-[19rem] place-items-center sm:col-span-2 sm:min-h-[42rem] md:col-span-1">
         <PlanetViewSectionImage
           planet={planet}
           planetView={planetView}
-          size={111}
-          className="sm:hidden"
-        />
-        <PlanetViewSectionImage
-          planet={planet}
-          planetView={planetView}
-          size={184}
-          className="hidden sm:block md:hidden"
-        />
-        <PlanetViewSectionImage
-          planet={planet}
-          planetView={planetView}
-          size={290}
-          className="hidden md:block"
         />
       </div>
-      <div className="col-span-2 flex flex-col px-6 text-center sm:col-span-1 sm:min-h-[19rem] sm:text-left md:justify-end">
+      <div className="col-span-2 flex max-w-sm flex-col px-6 text-center sm:col-span-1 sm:min-h-[19rem] sm:text-left md:justify-center md:px-0">
         <h1 className="mb-4 font-antonio text-[2.5rem] font-bold capitalize leading-snug sm:text-5xl sm:leading-tight">
           {planet.name}
         </h1>
-        <p className="mb-8 text-sm leading-relaxed sm:text-base">
+        <p className="mb-6 text-sm leading-relaxed sm:text-base md:min-h-[11rem] md:text-lg">
           {planet[planetView].content}
         </p>
         <p className="flex items-center justify-center gap-2 leading-relaxed text-gray-base sm:justify-start">
@@ -96,12 +82,18 @@ const PlanetViewSection = ({
             </svg>
           </a>
         </p>
+        <PlanetViewNavigation
+          planetView={planetView}
+          setPlanetView={setPlanetView}
+          planetName={planetName}
+          className="mt-6 hidden w-full max-w-sm md:flex"
+        />
       </div>
       <PlanetViewNavigation
         planetView={planetView}
         setPlanetView={setPlanetView}
         planetName={planetName}
-        className="col-span-1 col-start-2"
+        className="col-span-1 col-start-2 row-start-2 hidden w-full max-w-sm sm:flex md:hidden"
       />
     </section>
   );

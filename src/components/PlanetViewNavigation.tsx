@@ -18,10 +18,7 @@ export function PlanetViewNavigation({
   return (
     <nav
       aria-label="Manage the planet view"
-      className={clsx(
-        "row-start-2 hidden flex-col justify-center sm:flex",
-        className
-      )}
+      className={clsx("flex flex-col justify-center", className)}
     >
       <ul
         data-planet={planetName}
