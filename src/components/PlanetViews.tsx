@@ -48,19 +48,16 @@ const PlanetViewSection = ({
   return (
     <section className="grid grid-cols-1 place-items-center p-6 sm:grid-cols-2 md:grid-rows-[1fr] md:gap-x-12">
       <div className="grid min-h-[19rem] place-items-center sm:col-span-2 sm:min-h-[42rem] md:col-span-1">
-        <PlanetViewSectionImage
-          planet={planet}
-          planetView={planetView}
-        />
+        <PlanetViewSectionImage planet={planet} planetView={planetView} />
       </div>
       <div className="flex max-w-sm flex-col px-6 text-center sm:min-h-[19rem] sm:text-left md:justify-center md:px-0">
-        <h1 className="mb-4 font-antonio text-[2.5rem] font-bold capitalize leading-snug sm:text-5xl sm:leading-tight">
+        <h1 className="mb-4 font-antonio text-[2.5rem] font-bold capitalize leading-snug sm:text-5xl sm:leading-tight md:text-7xl">
           {planet.name}
         </h1>
         <p className="mb-6 text-sm leading-relaxed sm:text-base md:min-h-[11rem] md:text-lg">
           {planet[planetView].content}
         </p>
-        <p className="flex items-center justify-center gap-2 leading-relaxed text-gray-base sm:justify-start">
+        <p className="flex items-center justify-center gap-2 leading-relaxed text-gray-base sm:justify-start md:text-lg">
           Source :
           <a
             target="_blank"
