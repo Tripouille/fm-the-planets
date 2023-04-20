@@ -45,7 +45,7 @@ export function PlanetViewNavigation({
         <li>
           <button
             onClick={() => setPlanetView("overview")}
-            className="flex w-full gap-4 border-2 border-gray-dark px-8 py-2"
+            className="flex w-full gap-4 border-2 border-gray-dark px-8 pt-3 pb-2"
             aria-current={planetView === "overview"}
           >
             <span className="font-bold text-gray-dark">01</span> OVERVIEW
@@ -55,7 +55,7 @@ export function PlanetViewNavigation({
         <li>
           <button
             onClick={() => setPlanetView("structure")}
-            className="flex w-full gap-4 border-2 border-gray-dark px-8 py-2"
+            className="flex w-full gap-4 border-2 border-gray-dark px-8 pt-3 pb-2"
             aria-current={planetView === "structure"}
           >
             <span className="font-bold text-gray-dark">02</span> INTERNAL
@@ -66,7 +66,7 @@ export function PlanetViewNavigation({
         <li>
           <button
             onClick={() => setPlanetView("geology")}
-            className="flex w-full gap-4 border-2 border-gray-dark px-8 py-2"
+            className="flex w-full gap-4 border-2 border-gray-dark px-8 pt-3 pb-2"
             aria-current={planetView === "geology"}
           >
             <span className="font-bold text-gray-dark">03</span> SURFACE GEOLOGY
