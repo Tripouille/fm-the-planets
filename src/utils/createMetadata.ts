@@ -14,7 +14,7 @@ export const createMetadata = ({
   images,
 }: CreateMetadataParams): Metadata => {
   const imagesWithBaseURL = images?.map(
-    (image) => `https://the-planets.jgambard.me}${image}`
+    (image) => `https://the-planets.jgambard.me${image}`
   );
   const titleWithSiteName = `${title} - The planets`;
   const openGraphImages = imagesWithBaseURL?.map((image) => ({ url: image }));
