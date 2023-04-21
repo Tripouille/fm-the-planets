@@ -13,8 +13,11 @@ export const createMetadata = ({
   description,
   images,
 }: CreateMetadataParams): Metadata => {
+  const imagesWithBaseURL = images?.map(
+    (image) => `https://the-planets.jgambard.me}${image}`
+  );
   const titleWithSiteName = `${title} - The planets`;
-  const openGraphImages = images?.map((image) => ({ url: image }));
+  const openGraphImages = imagesWithBaseURL?.map((image) => ({ url: image }));
 
   return {
     title: titleWithSiteName,
@@ -30,7 +33,7 @@ export const createMetadata = ({
       card: "summary_large_image",
       title: titleWithSiteName,
       description,
-      images,
+      images: imagesWithBaseURL,
     },
   };
 };
